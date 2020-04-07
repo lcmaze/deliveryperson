@@ -18,4 +18,4 @@ import { ViewmoreAcceptedComponent } from '../viewmore-accepted/viewmore-accepte
   ],
   declarations: [AcceptedordersPage,ViewmoreAcceptedComponent]
 })
-export class AcceptedordersPageModule {}
+export class AcceptedordersPageModule { }
