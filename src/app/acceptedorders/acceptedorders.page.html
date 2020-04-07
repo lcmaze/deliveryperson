@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Accepted Orders</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <div class="main-card" (click)="viewmore()">
+            <div class="row1">
+                <div>
+                    Order No : <b> qwertypoiuy</b>
+                </div>
+                <div class="date">
+                    <b>10:30 AM</b> 10-10-2020
+                </div>
+            </div>
+
+            <div class="row2">
+                <div class="name">Litson Thomas</div>
+                <div class="phone">+91 9747877576</div>
+            </div>
+
+            <div class="row3">
+                address, landmark, place, city, pin address, landmark, place, city, pin address, landmark, place, city, pin
+            </div>
+        </div>
+        <!-- <div class="foot">
+            <ion-button fill="clear" size="default" color="success" (click)="viewmore()">
+                More Info
+            </ion-button>
+            <div>
+                <ion-button fill="clear" size="default" color="success">
+                    <ion-icon name="checkmark"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" size="default" color="danger">
+                    <ion-icon name="close"></ion-icon>
+                </ion-button>
+            </div>
+        </div> -->
+    </ion-card>
+</ion-content>

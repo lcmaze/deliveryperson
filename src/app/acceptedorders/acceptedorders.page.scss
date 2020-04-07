@@ -1,0 +1,30 @@
+.main-card {
+    padding: 16px;
+    .row1 {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        margin-bottom: 8px;
+        .date {
+            font-size: 11px;
+        }
+    }
+    .row2 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        .name {
+            font-weight: 700;
+            font-size: 16px;
+            color: #3d3d3d;
+        }
+        .phone {
+            font-weight: 700;
+            font-size: 12px;
+            color: #3d3d3d;
+        }
+    }
+    .row3 {
+        font-size: 14px;
+    }
+}

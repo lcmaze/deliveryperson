@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-toolbar>
+        <div class="ion-padding">Order No : <b> qwertypoiuy</b></div>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()" fill="clear" size="large" color="primary">
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-vertical">
+    <div class="row1">
+        <div class="name">Litson Thomas</div>
+        <div class="phone">+91 9747877576</div>
+    </div>
+    <div class="row2">
+        Email: <strong>litson66@gmail.com</strong>
+    </div>
+    <div class="row3">
+        Address : <strong>address,landmark, place, city, state</strong>
+    </div>
+    <div class="row4">Pin : <strong>680111</strong></div>
+    <div class="row5"><strong> 10:30 AM ,</strong>10-10-2020</div>
+    <div class="row6">Details : <strong>description / prefered shops</strong></div>
+
+
+    <ion-list>
+        <ion-card>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="7" size-xl="8">
+                        <b>Products</b>
+                    </ion-col>
+                    <ion-col size="5" size-xl="4">
+                        <b>Quantity</b>
+                    </ion-col>
+                </ion-row>
+                <hr>
+
+                <ion-row>
+                    <ion-col size="7" size-xl="8">
+                        Milk Milma
+                    </ion-col>
+                    <ion-col size="5" size-xl="4">
+                        2 nos
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7" size-xl="8">
+                        Milk Milma
+                    </ion-col>
+                    <ion-col size="5" size-xl="4">
+                        2 nos
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+        </ion-card>
+    </ion-list>
+
+
+    <ion-list>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="middler" size="6" size-xl="8">
+                    <b>Price</b>
+                </ion-col>
+                <ion-col size="6" size-xl="4">
+                    <ion-input placeholder="Enter Price"></ion-input>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col class="middler" size="6" size-xl="8">
+                    <b>Delivery</b>
+                </ion-col>
+                <ion-col size="6" size-xl="4">
+                    <ion-input placeholder="Delivery Charge"></ion-input>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col class="middler" size="6" size-xl="8">
+                    <b>Total</b>
+                </ion-col>
+                <ion-col size="6" size-xl="4">
+                    <h2 style="margin: 0;padding-left: 8px;"><b>Rs NaN</b></h2>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-list>
+</ion-content>
