@@ -28,3 +28,12 @@
     vertical-align: middle;
     align-items: center;
 }
+
+.rowz {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 10px 16px;
+    background-color: #eaeaea;
+}

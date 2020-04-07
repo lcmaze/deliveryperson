@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewmoreComponent } from '../viewmore/viewmore.component';
-import { ModalController } from '@ionic/angular';
+import { ModalController, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-neworders',
@@ -9,9 +9,10 @@ import { ModalController } from '@ionic/angular';
 })
 export class NewordersPage implements OnInit {
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController,public menuCtrl: MenuController) { }
 
   ngOnInit() {
+    this.menuCtrl.enable(true);
   }
 
   async viewmore(){

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, MenuController } from '@ionic/angular';
 import { ViewmoreAcceptedComponent } from '../viewmore-accepted/viewmore-accepted.component';
 
 @Component({
@@ -9,9 +9,10 @@ import { ViewmoreAcceptedComponent } from '../viewmore-accepted/viewmore-accepte
 })
 export class AcceptedordersPage implements OnInit {
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController,public menuCtrl: MenuController) { }
 
   ngOnInit() {
+    this.menuCtrl.enable(true);
   }
 
   async viewmore(){
