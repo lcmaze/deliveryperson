@@ -1,65 +1,55 @@
-<ion-header>
-    <ion-toolbar>
-        <div class="ion-padding">Order No : <b> qwertypoiuy</b></div>
-        <ion-buttons slot="end">
-            <ion-button (click)="dismiss()" fill="clear" size="large" color="primary">
-                <ion-icon name="close"></ion-icon>
-            </ion-button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding-vertical">
-    <div class="row1">
-        <div class="name">Litson Thomas</div>
-        <div class="phone">+91 9747877576</div>
-    </div>
-    <div class="row2">
-        Email: <strong>litson66@gmail.com</strong>
-    </div>
-    <div class="row3">
-        Address : <strong>address,landmark, place, city, state</strong>
-    </div>
-    <div class="row4">Pin : <strong>680111</strong></div>
-    <div class="row5"><strong> 10:30 AM ,</strong>10-10-2020</div>
-    <div class="row6">Details : <strong>description / prefered shops</strong></div>
-
-
-    <ion-list>
-        <ion-card>
-            <ion-grid>
-                <ion-row>
-                    <ion-col size="7" size-xl="8">
-                        <b>Products</b>
-                    </ion-col>
-                    <ion-col size="5" size-xl="4">
-                        <b>Quantity</b>
-                    </ion-col>
-                </ion-row>
-                <hr>
-
-                <ion-row>
-                    <ion-col size="7" size-xl="8">
-                        Milk Milma
-                    </ion-col>
-                    <ion-col size="5" size-xl="4">
-                        2 nos
-                    </ion-col>
-                </ion-row>
-
-                <ion-row>
-                    <ion-col size="7" size-xl="8">
-                        Milk Milma
-                    </ion-col>
-                    <ion-col size="5" size-xl="4">
-                        2 nos
-                    </ion-col>
-                </ion-row>
-
-            </ion-grid>
-        </ion-card>
-    </ion-list>
-
-
-
-</ion-content>
+<ng-container *ngIf="orderDetails">
+    <ion-header>
+        <ion-toolbar>
+            <div class="ion-padding">Order No : <b> {{orderDetails.order_id}}</b></div>
+            <ion-buttons slot="end">
+                <ion-button (click)="dismiss()" fill="clear" size="large" color="primary">
+                    <ion-icon name="close"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    
+    <ion-content class="ion-padding-vertical">
+        <div class="row1">
+            <div class="name">{{orderDetails.order_address.user_name}}</div>
+            <div class="phone">+91 {{orderDetails.order_address.phone}}</div>
+        </div>
+        <div class="row3">
+            Address : <strong>{{orderDetails.order_address.address_one}},{{orderDetails.order_address.address_two}},{{orderDetails.order_address.landmark}},{{orderDetails.order_address.place}},{{orderDetails.order_address.pincode}}, {{orderDetails.order_address.city}}, {{orderDetails.order_address.state}}</strong>
+        </div>
+        <div class="row4">Pin : <strong>{{orderDetails.order_address.pincode}}</strong></div>
+        <div class="row5">Time : <strong>{{orderDetails.created_at}}</strong></div>
+        <div class="row6">Details : <strong>{{orderDetails.remarks}}</strong></div>
+    
+    
+        <ion-list>
+            <ion-card>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="7" size-xl="8">
+                            <b>Products</b>
+                        </ion-col>
+                        <ion-col size="5" size-xl="4">
+                            <b>Quantity</b>
+                        </ion-col>
+                    </ion-row>
+                    <hr>
+    
+                    <ion-row *ngFor="let item of orderDetails.order_summary">
+                        <ion-col size="7" size-xl="8">
+                            {{item.name}}
+                        </ion-col>
+                        <ion-col size="5" size-xl="4">
+                            {{item.quantity}} {{item.unit}}
+                        </ion-col>
+                    </ion-row>
+    
+                </ion-grid>
+            </ion-card>
+        </ion-list>
+    
+    
+    
+    </ion-content>
+</ng-container>

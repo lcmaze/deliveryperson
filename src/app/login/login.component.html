@@ -1,0 +1,22 @@
+<div class="login">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Login Here!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-no-padding">
+      <ion-list>
+        <form #loginForm="ngForm">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" placeholder="Enter Email" ngModel name="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="text" placeholder="Enter Password" ngModel name="password" type="password"></ion-input>
+          </ion-item>
+          <ion-button (click)="submitForm(loginForm)" expand="block" fill="clear" shape="round">LOGIN</ion-button>
+        </form>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</div>

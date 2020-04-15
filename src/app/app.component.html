@@ -1,38 +1,40 @@
-<ion-app>
-    <ion-split-pane contentId="main-content">
-        <ion-menu contentId="main-content" type="overlay">
-            <ion-content>
-                <ion-list id="inbox-list">
-                    <ion-list-header>Welcome</ion-list-header>
-                    <ion-note>Username</ion-note>
-
-                    <ion-menu-toggle auto-hide="false">
-                        <ion-item routerDirection="root" routerLink="/neworders" lines="none" detail="false">
-                            <ion-icon slot="start" ios="cart-outline" md="cart-sharp"></ion-icon>
-                            <ion-label>New Orders</ion-label>
-                        </ion-item>
-                    </ion-menu-toggle>
-
-                    <ion-menu-toggle auto-hide="false">
-                        <ion-item routerDirection="root" routerLink="/acceptedorders" lines="none" detail="false">
-                            <ion-icon slot="start" ios="thumbs-up-outline" md="thumbs-up-sharp"></ion-icon>
-                            <ion-label>Accepted Orders</ion-label>
-                        </ion-item>
-                    </ion-menu-toggle>
-
-                </ion-list>
-
-                <ion-list>
-                    <ion-menu-toggle auto-hide="false">
-                        <ion-item lines="none" detail="false" (click)="logoutFunction()" routerDirection="root" routerLink>
-                            <ion-icon slot="start" ios="log-in-outline" md="log-in-sharp"></ion-icon>
-                            <ion-label>Logout</ion-label>
-                        </ion-item>
-                    </ion-menu-toggle>
-                </ion-list>
-
-            </ion-content>
-        </ion-menu>
-        <ion-router-outlet id="main-content"></ion-router-outlet>
-    </ion-split-pane>
-</ion-app>
+<ng-container>
+    <ion-app>
+        <ion-split-pane contentId="main-content">
+            <ion-menu contentId="main-content" type="overlay"  *ngIf="userIsAuthenticated">
+                <ion-content>
+                    <ion-list id="inbox-list">
+                        <ion-list-header>Welcome</ion-list-header>
+                        <ion-note>{{userName}}</ion-note>
+    
+                        <ion-menu-toggle auto-hide="false">
+                            <ion-item routerDirection="root" routerLink="/neworders" lines="none" detail="false">
+                                <ion-icon slot="start" ios="cart-outline" md="cart-sharp"></ion-icon>
+                                <ion-label>New Orders</ion-label>
+                            </ion-item>
+                        </ion-menu-toggle>
+    
+                        <ion-menu-toggle auto-hide="false">
+                            <ion-item routerDirection="root" routerLink="/acceptedorders" lines="none" detail="false">
+                                <ion-icon slot="start" ios="thumbs-up-outline" md="thumbs-up-sharp"></ion-icon>
+                                <ion-label>Accepted Orders</ion-label>
+                            </ion-item>
+                        </ion-menu-toggle>
+    
+                    </ion-list>
+    
+                    <ion-list>
+                        <ion-menu-toggle auto-hide="false">
+                            <ion-item lines="none" detail="false" (click)="logout()" routerDirection="root" routerLink>
+                                <ion-icon slot="start" ios="log-in-outline" md="log-in-sharp"></ion-icon>
+                                <ion-label>Logout</ion-label>
+                            </ion-item>
+                        </ion-menu-toggle>
+                    </ion-list>
+    
+                </ion-content>
+            </ion-menu>
+            <ion-router-outlet id="main-content"></ion-router-outlet>
+        </ion-split-pane>
+    </ion-app>
+</ng-container>

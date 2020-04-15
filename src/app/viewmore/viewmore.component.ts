@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, OnInit, Input } from '@angular/core';
+import { ModalController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-viewmore',
@@ -8,7 +8,12 @@ import { ModalController } from '@ionic/angular';
 })
 export class ViewmoreComponent implements OnInit {
 
-  constructor(public modalCtrl: ModalController) { }
+  @Input('order') order: any;
+
+  orderDetails: any;
+  constructor(public modalCtrl: ModalController, private navParams: NavParams) {
+    this.orderDetails = navParams.get('order');
+  }
 
   ngOnInit() {}
 

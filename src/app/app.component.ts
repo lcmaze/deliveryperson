@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, LoadingController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { environment } from 'src/environments/environment';
+import { HTTP } from '@ionic-native/http/ngx';
+import { NgForm } from '@angular/forms';
+import { AdminService } from './auth.service';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +21,8 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private data: AdminService, private router: Router
   ) {
     this.initializeApp();
   }
@@ -27,7 +34,37 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  userIsAuthenticated = false;
+  auth: boolean;
+  userName: any;
+  userId: any;
+  isAdmin: any;
+  private authListenerSubs: Subscription;
 
+  ngOnInit() {
+    this.getAuthDetails();
+  }
+
+  getAuthDetails() {
+    // get auth details 
+    this.data.autoAuthUser();
+    this.userIsAuthenticated = this.data.getIsAuth();
+    this.authListenerSubs = this.data.getAuthStatusListener().subscribe(result => {
+      this.userIsAuthenticated = result;
+    });
+    this.userName = this.data.getName();
+    this.userId = this.data.getUserid();
+    this.auth = this.data.getIsAuth();
+    if(this.auth === false){
+      this.router.navigate(['/login']);
+    }
+    else{
+      this.router.navigate(['/neworders']);
+    }
+    // get auth details 
+  }
+
+  logout(){
+    this.data.getLogout();
   }
 }
