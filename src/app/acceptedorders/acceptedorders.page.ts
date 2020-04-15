@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ModalController, ToastController } from '@ionic/angular';
+=======
+import { ModalController, MenuController } from '@ionic/angular';
+>>>>>>> f5d036d2b35330c5753f7c7aa35bdab621356ead
 import { ViewmoreAcceptedComponent } from '../viewmore-accepted/viewmore-accepted.component';
 import { environment } from 'src/environments/environment';
 import { HTTP } from '@ionic-native/http/ngx';
